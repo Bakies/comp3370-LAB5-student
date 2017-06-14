@@ -39,6 +39,13 @@ public class DiskLocation {
 		return String.format("Track: %d, Sector: %d", track, sector);
 	}
 
+	public String treeString() {
+		if (track < 0)
+			return "nil";
+		return String.format("(%d,%d)%s {%s | %s}", track, sector, color == RB.BLACK ? "B" : "R",
+				this.left.treeString(), this.right.treeString());
+	}
+
 	public boolean isLessThan(DiskLocation that) {
 		return !isGreaterThan(that) && !equals(that);
 	}

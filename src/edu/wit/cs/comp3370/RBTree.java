@@ -210,25 +210,4 @@ public class RBTree extends LocationHolder {
 	public String toString() {
 		return root.treeString();
 	}
-
-	public static void main(String... strings) {
-		RBTree T = new RBTree();
-		System.out.println(T);
-		T.insert(new DiskLocation(1, 1));
-		System.out.println(T);
-		T.insert(new DiskLocation(2, 1));
-		System.out.println(T);
-		T.insert(new DiskLocation(3, 1));
-		System.out.println(T);
-
-		T = new RBTree();
-		for (int x = 1; x < 10; x++) {
-			T.insert(new DiskLocation(x, 1));
-			System.out.println(T);
-		}
-		System.out.println(T.find(new DiskLocation(5, 1)));
-		for (int x = 2; x < 49; x++) {
-			System.out.println(x + " " + T.prev(T.find(new DiskLocation(x, 1))));
-		}
-	}
 }

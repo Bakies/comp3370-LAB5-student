@@ -2,6 +2,9 @@ package edu.wit.cs.comp3370;
 
 // TODO: copy your lab 4 BST code here
 public class BST extends LocationHolder {
+	public BST() {
+		root = nil;
+	}
 
 	@Override
 	public DiskLocation next(DiskLocation d) {
